@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Gallery</h1>
+         <div class="gallery">
+            <img src="assets/nature1.jpeg" alt="">
+            <img src="assets/nature2.jpeg" alt="">
+            <img src="assets/nature3.jpeg" alt="">
+            <img src="assets/nature4.jpeg" alt="">
+            <img src="assets/nature5.jpeg" alt="">
+            <img src="assets/nature6.jpeg" alt="">
+            <img src="assets/nature7.jpeg" alt="">
+            <img src="assets/nature8.jpeg" alt="">
+            <img src="assets/nature9.jpeg" alt="">
+            <img src="assets/nature10.jpeg" alt="">
+            <img src="assets/nature11.jpeg" alt="">
+            <img src="assets/nature12.jpeg" alt="">
+            <img src="assets/nature12.jpeg" alt="">
+            <img src="assets/nature13.jpeg" alt="">
+    </div>
+
+    <div class="popup">
+        <span>&times;</span>
+        <img src="assets/nature1.jpeg" alt="">
+    </div>
+    <div class="popup">
+        <span>&times;</span>
+        <img src="assets/nature2.jpeg" alt="">
+    </div>
+    <div class="popup">
+        <span>&times;</span>
+        <img src="assets/nature3.jpeg" alt="">
+    </div>
+    <div class="popup">
+        <span>&times;</span>
+        <img src="assets/nature4.jpeg" alt="">
+    </div>
+    <div class="popup">
+        <span>&times;</span>
+        <img src="assets/nature5.jpeg" alt="">
+    </div>
+    <div class="popup">
+        <span>&times;</span>
+        <img src="assets/nature6.jpeg" alt="">
+    </div>
+    <div class="popup">
+        <span>&times;</span>
+        <img src="assets/nature7.jpeg" alt="">
+    </div>
+    <div class="popup">
+        <span>&times;</span>
+            <span>&times;</span>
+            <img src="assets/nature8.jpeg" alt="">
+    </div>
+
+    <script>
+        // Select all images in the gallery
+        const images = document.querySelectorAll('.gallery img');
+
+        // Select the popup and the popup image
+        const popup = document.querySelector('.popup');
+        const popupImage = document.querySelector('.popup img');
+
+        // Select the close button (span)
+        const closeButton = document.querySelector('.popup span');
+
+        // Function to open the popup with the clicked image
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                popup.style.display = 'block';
+                popupImage.src = image.src;
+            });
+        });
+
+        // Function to close the popup
+        closeButton.addEventListener('click', () => {
+            popup.style.display = 'none';
+        });
+
+        // Close the popup if clicking outside the image
+        popup.addEventListener('click', (e) => {
+            if (e.target === popup) {
+                popup.style.display = 'none';
+            }
+        });
+    </script>
+    
+</body>
+</html>
